@@ -10,6 +10,7 @@ body {
     rgba(47, 47, 47, 1) 23.8%,
     rgba(150, 41, 41, 1) 92%
   );
+  color: #fff;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,7 +73,7 @@ body {
 .action-btn {
   background-color: #fff;
   border: 0;
-  color: #dfdbdf;
+  color: #868686;
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
@@ -80,7 +81,7 @@ body {
 }
 
 .action-btn.action-btn-big {
-  color: #cdc2d0;
+  color: #696969;
   font-size: 30px;
 }
 
@@ -89,7 +90,7 @@ body {
 }
 
 .music-info {
-  background-color: rgba(#fff, 0.5);
+  background-color: rgba(#fff, 0.9);
   border-radius: 15px 15px 0 0;
   position: absolute;
   top: 0;
@@ -121,9 +122,66 @@ body {
 }
 
 .progress {
-  background-color: rgb();
+  background-color: rgb(255, 0, 0);
   border-radius: 5px;
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
+}
+
+.playlist-container {
+  background-color: rgba(150, 61, 61, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 20px 20px 0 rgba(150, 61, 61, 0.6);
+  display: flex;
+  position: relative;
+  margin: none;
+  z-index: 10;
+  width: 90vw;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+}
+
+.list li {
+  cursor: pointer;
+  padding: 20px;
+  margin: 5px 0;
+  display: grid;
+  grid-template-areas: 'track-cover track-title track-duration';
+  grid-template-columns: max-content auto auto;
+  justify-items: center;
+  align-items: center;
+  column-gap: 15px;
+  width: 100%;
+}
+
+li .track-cover {
+  column-width: 100px;
+}
+
+li .track-cover img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.track-title {
+  justify-self: left;
+}
+
+.track-duration {
+  justify-self: right;
+}
+
+.list li.playing {
+  background-color: rgba(255, 0, 0, 0.719);
+  border-radius: 15px;
 }
